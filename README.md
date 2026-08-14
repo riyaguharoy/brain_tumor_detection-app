@@ -6,7 +6,7 @@ A deep learning web app that classifies brain MRI scans as **Healthy** or **Brai
 
 ---
 
-## Demo
+## Application Demo 
 
 Upload an MRI image and the app returns a prediction with a confidence score.
 
@@ -30,7 +30,7 @@ The model is a CNN trained on labeled brain MRI images (`Brain Tumor` / `Healthy
 | Dense (sigmoid output) | (1,) | 11 |
 
 - **Input:** 64×64×3 RGB MRI images
-- **Output:** a single sigmoid probability — closer to 1 means Healthy, closer to 0 means Brain Tumor
+- **Output:** a single sigmoid probability - closer to 1 means Healthy, closer to 0 means Brain Tumor
 - **Training:** images normalized to [0, 1], with data augmentation (rotation, flip, zoom, shift) applied during training
 
 ## Project structure
@@ -83,6 +83,6 @@ and replace the existing `brain_tumor_model.h5` in this repo.
 
 ## Tech stack
 
-- TensorFlow / Keras — model training and inference
-- Streamlit — web app interface
-- Pillow / NumPy — image preprocessing
+- TensorFlow / Keras - model training and inference
+- Streamlit - web app interface
+- Pillow / NumPy - image preprocessing
