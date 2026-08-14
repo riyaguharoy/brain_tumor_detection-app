@@ -60,7 +60,6 @@ def main():
 
     if uploaded_file is not None:
         image = Image.open(uploaded_file)
-        st.image(image, caption="Uploaded MRI", use_container_width=True)
 
         with st.spinner("Analyzing..."):
             input_tensor = preprocess_image(image)
@@ -74,14 +73,20 @@ def main():
             predicted_label = CLASS_IF_LOW
             confidence = float(1 - raw_output) * 100
 
-        st.subheader("Result")
-        if predicted_label == "Brain Tumor":
-            st.error(f"🔴 Prediction: **{predicted_label}** ({confidence:.1f}% confidence)")
-        else:
-            st.success(f"🟢 Prediction: **{predicted_label}** ({confidence:.1f}% confidence)")
+        col1, col2 = st.columns(2)
 
-        st.write(f"Raw model output (probability of '{CLASS_IF_HIGH}'): {raw_output:.4f}")
-        st.progress(float(raw_output))
+        with col1:
+            st.image(image, caption="Uploaded MRI", width=300)
+
+        with col2:
+            st.subheader("Result")
+            if predicted_label == "Brain Tumor":
+                st.error(f"🔴 Prediction: **{predicted_label}** ({confidence:.1f}% confidence)")
+            else:
+                st.success(f"🟢 Prediction: **{predicted_label}** ({confidence:.1f}% confidence)")
+
+            st.write(f"Raw model output (probability of '{CLASS_IF_HIGH}'): {raw_output:.4f}")
+            st.progress(float(raw_output))
 
 
 if __name__ == "__main__":
