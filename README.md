@@ -10,7 +10,7 @@ A deep learning web app that classifies brain MRI scans as **Healthy** or **Brai
 
 Upload an MRI image and the app returns a prediction with a confidence score.
 
-*(Add a screenshot or a link to your live Hugging Face Space / Streamlit Cloud deployment here once it's up.)*
+<img width="1075" height="837" alt="image" src="https://github.com/user-attachments/assets/c1fdddcd-39bc-47bc-8b2d-7502b354a44c" />
 
 ---
 
@@ -86,7 +86,3 @@ and replace the existing `brain_tumor_model.h5` in this repo.
 - TensorFlow / Keras — model training and inference
 - Streamlit — web app interface
 - Pillow / NumPy — image preprocessing
-
-## License
-
-*(Add a license here, e.g. MIT, if you want others to be able to reuse this freely — see [choosealicense.com](https://choosealicense.com) if unsure which one fits.)*
